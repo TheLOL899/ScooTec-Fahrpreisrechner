@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScooTec GmbH Fahrpreis-Rechner</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="pricing-info">
+      <h2>Preisinformationen</h2>
+      <p>Kosten pro Minute: €<span id="cost-per-minute"></span></p>
+      <p>Grundpreis: €<span id="cost-base-price"></span></p>
+    </div>
+    <h1>ScooTec E-Scooter Fahrpreis-Rechner</h1>
+    <form id="rental-form">
+      <label for="duration">Geben Sie die Mietdauer in Minuten ein:</label>
+      <input type="number" id="duration" placeholder="z.B. 10">
+      <input type="submit" value="berechnen">
+    </form>
+    <p id="cost-display">Gesamtkosten: €0.00</p>
+    <script src="script.js"></script>
+    <hr></hr>
+    <div id="ride-history">
+      <h2>Fahrtenhistorie</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Dauer (Minuten)</th>
+            <th>Kosten (Euro)</th>
+          </tr>
+        </thead>
+        <tbody id="ride-history-table"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
