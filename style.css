@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #cost-display {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #pricing-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+    font-size: 12px;
+    padding: 10px;
+  }  
+  table {
+    border: 1px solid gray;
+    margin: 0 auto;
+    
+  }
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  td {
+    padding: 8px;
+  }
+  td:first-child {
+    text-align: center;
+  }
+  thead th {
+    font-weight: bold;
+    background-color: #87CEEB;
+  }
+          
