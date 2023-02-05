@@ -1,56 +1,66 @@
-// Variables for cost per minute and base price
-const COST_PER_MINUTE = 0.20;
-const BASE_PRICE = 1;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
 
-// Variables to show in HTML for pricing info 
-const costPerMinute = document.getElementById('cost-per-minute');
-costPerMinute.textContent = COST_PER_MINUTE;
-const costBasePrice = document.getElementById('cost-base-price');
-costBasePrice.textContent = BASE_PRICE;
-
-// Function to calculate the full Price
-function calcPrice(durationInMinutes) {
-    return durationInMinutes * COST_PER_MINUTE + BASE_PRICE;
-}
-
-// get reference rental-form & cost-display
-const form = document.getElementById('rental-form');
-const costDisplay = document.getElementById('cost-display');
-
-// prevents input to get auto submited
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    const duration = document.getElementById('duration').value;
-    // Disclaimer that every number <1 is not allowed
-    if (duration < 1) {
-        alert("Zeitreisen(negative Zahlen) sind nicht erlaubt. Bitte geben Sie eine positive Zahl ein.");
-    } else {
-        // calculate price and send to HTML
-        const cost = calcPrice(duration);
-        costDisplay.innerHTML = `Gesamtkosten: ${cost.toFixed(2)}€`;
-
-        // Variables for Fahrtenhistorie
-        const date = new Date();
-        let pastRides = [];
-
-        pastRides.push({duration: duration, cost: cost, date: date});
-
-        // Create a new table row for every new ride
-        const rideHistoryTable = document.getElementById('ride-history-table');
-        const row = document.createElement('tr');
-        const dateCell = document.createElement('td');
-        dateCell.textContent = date.toLocaleDateString();
-        const durationCell = document.createElement('td');
-        durationCell.textContent = duration;
-        const costCell = document.createElement('td');
-        costCell.textContent = `${cost.toFixed(2)}€`;
-
-        // Append the cells to the row
-        row.appendChild(dateCell);
-        row.appendChild(durationCell);
-        row.appendChild(costCell);
-
-        // Append the row to the table
-        rideHistoryTable.appendChild(row);
-    }
-});
+  #cost-display {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #pricing-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+    font-size: 12px;
+    padding: 10px;
+  }  
+  table {
+    border: 1px solid gray;
+    margin: 0 auto;
+    
+  }
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  td {
+    padding: 8px;
+  }
+  td:first-child {
+    text-align: center;
+  }
+  thead th {
+    font-weight: bold;
+    background-color: #87CEEB;
+  }
