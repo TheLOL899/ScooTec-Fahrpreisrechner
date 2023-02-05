@@ -17,7 +17,7 @@ function calcPrice(durationInMinutes) {
 const form = document.getElementById('rental-form');
 const costDisplay = document.getElementById('cost-display');
 
-// prevents formular to get auto submited
+// prevents input to get auto submited
 form.addEventListener('submit', event => {
     event.preventDefault();
     const duration = document.getElementById('duration').value;
@@ -27,7 +27,7 @@ form.addEventListener('submit', event => {
     } else {
         // calculate price and send to HTML
         const cost = calcPrice(duration);
-        costDisplay.innerHTML = `Gesamtkosten: €${cost.toFixed(2)}`;
+        costDisplay.innerHTML = `Gesamtkosten: ${cost.toFixed(2)}€`;
 
         // Variables for Fahrtenhistorie
         const date = new Date();
@@ -35,7 +35,7 @@ form.addEventListener('submit', event => {
 
         pastRides.push({duration: duration, cost: cost, date: date});
 
-        // Create a new table row for the new ride
+        // Create a new table row for every new ride
         const rideHistoryTable = document.getElementById('ride-history-table');
         const row = document.createElement('tr');
         const dateCell = document.createElement('td');
@@ -43,7 +43,7 @@ form.addEventListener('submit', event => {
         const durationCell = document.createElement('td');
         durationCell.textContent = duration;
         const costCell = document.createElement('td');
-        costCell.textContent = `€${cost.toFixed(2)}`;
+        costCell.textContent = `${cost.toFixed(2)}€`;
 
         // Append the cells to the row
         row.appendChild(dateCell);
@@ -54,5 +54,3 @@ form.addEventListener('submit', event => {
         rideHistoryTable.appendChild(row);
     }
 });
-
-
